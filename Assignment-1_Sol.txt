@@ -1,0 +1,134 @@
+1. Write a program to print Hello Students on the screen
+
+#include<stdio.h>
+int main()
+{
+    printf("Hello Students\n");
+    return 0;
+}
+output: Hello Students
+
+2. Write a program to print Hello in the first line and Students in the second line
+#include<stdio.h>
+int main()
+{
+    printf("Hello \nStudents\n");
+    return 0;	
+}
+Output: Hello
+	students
+3. Write a program to print “MySirG” on the screen. (Remember to print in double quotes)
+#include<stdio.h>
+int main()
+{
+    printf(" \"MySirG\" ");
+    return 0;
+}
+Output: "MySirG" 
+4. WAP to find the area of the circle. Take radius of circle from user as input and print the 
+result in below given format.
+Expected output format – “Area of circle is A having the radius R”. Replace A with area 
+& R with radius.
+#include<stdio.h>
+#define PI 3.14
+int main()
+{
+    float r, area;
+    printf("Enter the radius\n");
+    scanf("%f", &r);
+    area = PI * r * r;
+    printf("Area of circle is %0.2f having radius %0.2f\n" ,area, r);
+    return 0;
+}
+output: Enter the radius
+5
+Area of circle is 78.50 having radius 5.00
+
+5. WAP to calculate the length of String using printf function.
+#include<stdio.h>
+int main()
+{
+    int len;
+    len= printf("The input string\n");
+    printf("The given string is of %d length\n",len);
+    return 0;
+}
+output: The input string
+The given string is of 17 length
+6. WAP to print the name of the user in double quotes.
+Expected output format – “Hello , Amit Kumar”
+#include<stdio.h>
+int main()
+{
+    printf("\"Hello, Nandini\" ");
+    return 0;
+}
+Output: "Hello, Nandini"
+7. WAP to print “%d” on the screen.
+#include<stdio.h>
+int main()
+{
+    printf("%%d ");
+    return 0;
+}
+output: %d
+8. WAP to print “\n” on the screen.
+int main()
+{
+    printf(" \\n ");
+    return 0;
+}
+Output: \n
+9. WAP to print “\\” on the screen.
+#include<stdio.h>
+int main()
+{
+    printf(" \\\\ ");
+    return 0;
+}
+output: \\
+
+10. WAP to take date as an input in below given format and convert the date format and 
+display the result as given below.
+User Input date format – “DD/MM/YYYY” (27/11/2022)
+Output format –
+“Day – DD , Month – MM , Year – YYYY” (Day – 27 ,Month – 07 , Year – 2022)
+#include<stdio.h>
+int main()
+{
+    unsigned int day, month,year;
+    printf("Enter the date in DD/MM/YYYY format\n");
+    scanf("%u %u %u",&day, &month,&year);
+    printf("Day- %u, Month-%u, Year- %u",day, month,year);
+}
+output: Enter the date in DD/MM/YYYY format
+24 01 1986
+Day- 24, Month-1, Year- 1986
+11. WAP to take time as an input in below given format and convert the time format and 
+display the result as given below.
+User Input date format – “HH:MM”
+Output format – “HH hour and MM Minute”
+Example –
+“11:25” converted to “11 Hour and 25 Minute”
+#include<stdio.h>
+int main()
+{
+    unsigned int hour, min;
+    printf("Enter the time in \"HH:MM\" format\n");
+    scanf("%u %u",&hour,&min);
+    printf("%u Hour and %u Minute ",hour,min);
+    return 0;
+}
+output: Enter the time in "HH:MM" format
+12 10
+12 Hour and 10 Minute
+12. Find output of below code:
+int main()
+{ 
+int x = printf(“ineuron”);
+printf(“%d”,x);
+return 0;
+}
+
+Output: Error. This is because of apostrope on “%d”. 
+If we write "%d"  then the output is ineuron7
