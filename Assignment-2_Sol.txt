@@ -1,0 +1,292 @@
+					Assignment-2
+
+1. Write a program to print unit digit of a given number
+//1. WAP to find unit digit of a number
+#include<stdio.h>
+int main()
+{
+    int n, unit_digit;
+    printf("Enter a number\n");
+    scanf("%d",&n);
+    unit_digit= n%10;
+    printf("Unit digit of number %d is %d\n",n,unit_digit);
+    return 0;
+}
+***********************
+output: Enter a number
+24
+Unit digit of number 24 is 4
+-----------------------------------------------------------------------------------------
+2. Write a program to print a given number without its last digit.
+//2. WAP to print a given number without its last digit.
+#include<stdio.h>
+int main()
+{
+    int n, mod_num;
+    printf("Enter a number\n");
+    scanf("%d",&n);
+    mod_num= n/10;
+    if(mod_num)
+         printf("Origional Number:  %d, Modified Number: %d\n",n,mod_num);
+    else
+        printf("Origional Number:  %d, Modified Number: _\n",n);
+
+    return 0;
+}
+***********************
+Output: Enter a number
+4567
+Origional Number:  4567, Modified Number: 456
+Enter a number
+5
+Origional Number:  5, Modified Number: _
+-----------------------------------------------------------------------------------------
+3. Write a program to swap values of two int variables
+//3. Write a program to swap values of two int variables.
+#include<stdio.h>
+int main()
+{
+    int a,b,temp;
+    printf("Enter two numbers\n");
+    scanf("%d %d",&a,&b);
+     printf("Before swap:a=%d ,b=%d\n",a,b);
+    temp=a;
+    a=b;
+    b=temp;
+    printf("After swap: a=%d, b=%d\n",a,b);
+    return 0;
+}
+***********************
+Output:
+Enter two numbers
+5 6
+Before swap:a=5 ,b=6
+After swap: a=6, b=5
+-----------------------------------------------------------------------------------------
+4. Write a program to swap values of two int variables without using a third variable.
+
+#include <stdio.h>
+
+int main() {
+    int a,b;
+    printf("Enter 2 numbers to swap\n");
+    scanf("%d%d",&a,&b);
+    printf("Before swap a =%d, b=%d\n",a,b);
+    a = a+b;
+    b = a-b;
+    a = a-b;
+   printf("After swap a =%d, b=%d\n",a,b);
+return 0;
+}
+***********************
+output: Enter 2 numbers to swap
+1 2 
+Before swap a =1, b=2
+After swap a =2, b=1
+-----------------------------------------------------------------------------------------
+5. Write a program to input a three-digit number and display the sum of the digits.
+
+#include <stdio.h>
+
+int main() {
+    int a,sum;
+    sum=0;
+    printf("Enter a  3 digit numbers\n");
+    scanf("%d",&a);
+    printf("The entered number is =%d\n",a);
+   for(int i=0; i<3 ;i++)
+   {
+       sum =  sum+a%10;
+       a=a/10;
+   }
+   printf("Sum of digits =%d\n",sum);
+return 0;
+}
+***********************
+output: 
+Enter a  3 digit numbers
+456
+The entered number is =456
+Sum of digits =15
+-----------------------------------------------------------------------------------------
+6. Write a program which takes a character as an input and displays its ASCII code.
+
+#include <stdio.h>
+
+int main() {
+    char c;
+    printf("Enter any character\n");
+    scanf("%c",&c);
+    printf("ASCII code of character '%c' is %d\n",c,c);
+return 0;
+}
+***********************
+output: Enter any character
+A
+ASCII code of character 'A' is 65
+-----------------------------------------------------------------------------------------
+7. Write a program to find the position of first 1 in LSB.
+
+#include <stdio.h>
+
+int main() {
+    int num, digit,pos;
+    int flag=0;
+    pos = 0;
+    
+    printf("Enter any number\n");
+    scanf("%d",&num);
+    printf("Entered number is %d\n",num);
+    for(int i=0;i<num; )
+    {
+        digit = num%10;
+        num =num/10;
+        pos=pos+1;
+        if(digit==1)
+        {
+            printf("First position of '1' in the number is at %d",pos);
+            flag=1;
+            break;
+        }
+        
+    }
+    if(!flag)
+        {
+            printf("Entered number does not contain digit '1'\n");
+        }
+return 0;
+}
+***********************
+output: 
+Enter any number
+12345
+Entered number is 12345
+
+Enter any number
+3456
+Entered number is 3456
+Entered number does not contain digit '1'
+First position of '1' in the number is at 5
+-----------------------------------------------------------------------------------------
+8. Write a program to check whether the given number is even or odd using a bitwise 
+operator.
+
+#include <stdio.h>
+
+int main() {
+    int num;
+    printf("Enter any number\n");
+    scanf("%d",&num);
+    if((num&1)==1)
+    {
+        printf("Number is a odd number\n");
+    }
+    else{
+    printf("Number is even number\n");
+    }
+return 0;
+}
+-----------------------------------------------------------------------------------------
+9. Write a program to print size of an int, a float, a char and a double type variable
+
+#include <stdio.h>
+
+int main() {
+    printf("Size of char is %d\n",sizeof(char));
+    printf("Size of int is %d\n",sizeof(int));
+    printf("Size of float is %d\n",sizeof(float));
+    printf("Size of double is %d\n",sizeof(double));
+return 0;
+}
+***********************
+output: Size of char is 1
+Size of int is 4
+Size of float is 4
+Size of double is 8
+-----------------------------------------------------------------------------------------
+10. Write a program to make the last digit of a number stored in a variable as zero. 
+(Example - if x=2345 then make it x=2340)
+
+#include <stdio.h>
+
+int main() {
+    int num;
+    printf("Enter any number\n");
+    scanf("%d",&num);
+    num = num/10;
+    num = num*10;
+    printf("The number after modification is %d \n",num);
+return 0;
+}
+***********************
+output: 
+Enter any number
+2345
+The number after modification is 2340 
+-----------------------------------------------------------------------------------------
+11. Write a program to input a number from the user and also input a digit. Append a 
+digit in the number and print the resulting number. (Example - number=234 and 
+digit=9 then the resulting number is 2349)
+#include <stdio.h>
+
+int main() {
+    int num, digit;
+    printf("Enter any number and digit to append\n");
+    scanf("%d %d",&num,&digit);
+    num = num*10;
+    num= num+digit;
+    printf("The number after modification is %d \n",num);
+return 0;
+}
+***********************
+output: 
+Enter any number and digit to append
+234
+9
+The number after modification is 2349 
+-----------------------------------------------------------------------------------------
+12. Assume price of 1 USD is INR 76.23. Write a program to take the amount in INR and 
+convert it into USD.
+
+#include <stdio.h>
+
+int main() {
+    float priceINR;
+    int USD;
+    printf("Enter the price in INR greater than 77 \n");
+    scanf("%f",&priceINR);
+    USD = priceINR / 76.23;
+    printf("Price in USD is %d \n",USD);
+return 0;
+}
+***********************
+Output: Enter the price in INR greater than 77 
+7600
+Price in USD is 99 
+-----------------------------------------------------------------------------------------
+13. Write a program to take a three-digit number from the user and rotate its digits by 
+one position towards the right
+
+#include <stdio.h>
+
+int main() {
+    int num,temp_num,digit;
+    printf("Enter a number \n");
+    scanf("%d",&num);
+    temp_num= num/10;
+    digit = num%10;
+    num = temp_num;
+    while(temp_num>0)
+    {
+        temp_num = temp_num/10;
+        digit=digit*10;
+    }
+    num = num+digit;
+    printf("Number after one right shift %d \n",num);
+return 0;
+}
+***********************
+output: 
+Enter a number 
+2345
+Number after one right shift 5234 
