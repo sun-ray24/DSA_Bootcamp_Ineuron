@@ -1,0 +1,248 @@
+Assignment - 11 A Job Ready Bootcamp in C++, DSA and IOT MySirG
+More on functions in C Language
+1. Write a function to calculate LCM of two numbers. (TSRS)
+#include <stdio.h>
+int calLCM(int,int);
+int main() {
+    int a,b, LCM;
+    printf("Enter two numbers\n");
+    scanf("%d%d",&a,&b);
+    LCM= calLCM(a,b);
+    printf("LCM is %d",LCM);
+
+    return 0;
+}
+int calLCM(int a, int b)
+{
+    if(a<b)
+    {
+       for(int i=b;i>1;i++){
+           if(i%a==0 &&  i%b ==0) return i;
+       } 
+    }
+    else{
+        for(int i=a;i>1;i++){
+           if(i % a==0 && i % b ==0) return i;
+       } 
+    }
+}
+2. Write a function to calculate HCF of two numbers. (TSRS)
+#include <stdio.h>
+int calHCF(int,int);
+int main() {
+    int a,b, HCF;
+    printf("Enter two numbers\n");
+    scanf("%d%d",&a,&b);
+    HCF= calHCF(a,b);
+    printf("HCF is %d",HCF);
+
+    return 0;
+}
+int calHCF(int a, int b)
+{
+    int HCF=0;
+    int i=1;
+    
+        while((i<=b) && (i<=a)){
+            if(a%i==0 && b%i==0)
+            {
+                HCF=i;
+            }
+            i++;
+        }
+        
+    
+ 
+    return HCF;
+}
+3. Write a function to check whether a given number is Prime or not. (TSRS)
+#include <stdio.h>
+int checkPrime(int);
+int main() {
+    int num;
+    int flag;
+    printf("Enter a number\n");
+    scanf("%d",&num);
+    flag=checkPrime(num);
+if(flag) printf("Number is prime\n");
+else printf("Number is not a prime number");
+    return 0;
+}
+int checkPrime(int num){
+    int i=2;
+    int flag =0;
+    while(i<num)
+    {
+        if(num%i==0) return 0;
+        i++;
+    }
+    return 1;
+}
+4. Write a function to find the next prime number of a given number. (TSRS)
+#include <stdio.h>
+int CalnextPrime(int);
+int main() {
+    int num;
+    int nextPrime;
+    printf("Enter a number\n");
+    scanf("%d",&num);
+    nextPrime=CalnextPrime(num);
+printf("Next prime number is %d\n",nextPrime);
+    return 0;
+}
+int CalnextPrime(int n){
+   
+    int num;
+    int flag=1;
+    for(num=n+1;num>n;num++){
+         int i=2;
+    while(i<=num/2)
+    {
+        if(num%i==0){ flag=0; break;}
+        else{flag =1; break;}
+        i++;
+    }
+    if(flag) return num;
+    
+    }
+   // return 1;
+}
+5. Write a function to print first N prime numbers (TSRN)
+#include <stdio.h>
+void printNprime(int);
+int main() {
+    int num;
+    printf("Enter a number\n");
+    scanf("%d",&num);
+    printNprime(num);
+    return 0;
+}
+void printNprime(int count)
+{
+    int flag;
+    for(int i=2;i>1 ;i++)
+    {
+        if(count>=1){
+        flag=1;
+        for(int j=2;j<=i/2;j++)
+        {
+            if(i%j ==0){ flag=0; break;}
+        }
+        if(flag){printf("%d ",i); count--;}
+        }
+    }
+}
+6. Write a function to print all Prime numbers between two given numbers. (TSRN)
+#include <stdio.h>
+void printAllprime(int,int);
+int main() {
+    int num1, num2;
+    printf("Enter two numbers\n");
+    scanf("%d%d",&num1,&num2);
+    printAllprime(num1,num2);
+    return 0;
+}
+void printAllprime(int num1, int num2)
+{
+    int flag;
+    for(int i=num1;i<=num2 ;i++)
+    {
+        flag=1;
+        for(int j=2;j<=i/2;j++)
+        {
+            if(i%j ==0){ flag=0; break;}
+        }
+        if(flag){printf("%d ",i); }
+        
+    }
+}
+7. Write a function to print first N terms of Fibonacci series (TSRN)
+#include <stdio.h>
+void fibNterm(int);
+int main() {
+    int num;
+    printf("Enter a number\n");
+    scanf("%d",&num);
+    fibNterm(num);
+    return 0;
+}
+void fibNterm(int n){
+    int firstTerm=0;
+    int secondTerm=1;
+    int newTerm;
+    printf("%d %d ",firstTerm,secondTerm);
+    while(n>2)
+    {
+        newTerm=firstTerm+secondTerm;
+        firstTerm = secondTerm;
+        secondTerm = newTerm;
+        printf("%d ", newTerm);
+        n--;
+    }
+}
+8. Write a function to print PASCAL Triangle. (TSRN)
+
+#include <stdio.h>
+#include <stdio.h>
+int main() {
+   int rows, coef = 1, space, i, j;
+   printf("Enter the number of rows: ");
+   scanf("%d", &rows);
+   for (i = 0; i < rows; i++) {
+      for (space = 1; space <= rows - i; space++)
+         printf("  ");
+      for (j = 0; j <= i; j++) {
+         if (j == 0 || i == 0)
+            coef = 1;
+         else
+            coef = coef * (i - j + 1) / j;
+         printf("%4d", coef);
+      }
+      printf("\n");
+   }
+   return 0;
+}9. Write a program in C to find the square of any number using the function.
+#include <stdio.h>
+int CalSquare(int);
+int main() {
+    int num;
+    int result;
+    printf("enter a number\n");
+    scanf("%d",&num);
+    result = CalSquare(num);
+    printf("Square is %d ",result);
+    return 0;
+}
+int CalSquare(int num){
+    return num*num;
+    
+}
+10. Write a program in C to find the sum of the series 
+	1!/1 + 2!/2 + 3!/3 + 4!/4 + 5!/5 using the function.
+#include <stdio.h>
+void printSeries(int);
+int fact(int);
+int main() {
+    int num;
+    printf("Enter the range of series\n");
+    scanf("%d",&num);
+    printSeries(num);
+
+    return 0;
+}
+void printSeries(int n){
+    int sum=0;
+    for(int i=1;i<=n;i++){
+        sum = sum + fact(i)/i;
+    }
+    printf("Sum of the series is %d ",sum);
+    
+}
+int fact(int n){
+    int f=1;
+    for(int i=1;i<=n;i++){
+        f=f*i;
+    }
+    return f;
+    
+}
