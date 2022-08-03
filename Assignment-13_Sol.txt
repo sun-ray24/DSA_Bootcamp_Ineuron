@@ -1,0 +1,228 @@
+Assignment - 13 A Job Ready Bootcamp in C++, DSA and IOT MySirG
+More on Recursion in C Language
+1. Write a recursive function to calculate sum of first N natural numbers
+#include <stdio.h>
+int recNaturalSum(int);
+int main() {
+    int n, result;
+   printf("Enter value of N\n");
+   scanf("%d",&n);
+   result = recNaturalSum(n);
+   printf("Sum is %d ",result);
+    return 0;
+}
+int  recNaturalSum(int n)
+{
+   if(n>0) {
+               return(n+recNaturalSum(n-1));
+              // printf("%d",n%8);
+        
+
+        
+    }
+}
+2. Write a recursive function to calculate sum of first N odd natural numbers
+#include <stdio.h>
+int recNaturalSumOdd(int);
+int main() {
+    int n, result;
+   printf("Enter value of N\n");
+   scanf("%d",&n);
+   result = recNaturalSumOdd(n);
+   printf("Sum is %d ",result);
+    return 0;
+}
+int  recNaturalSumOdd(int n)
+{
+   if(n>0) {
+               return((2*n-1)+recNaturalSumOdd(n-1));
+              // printf("%d",n%8);
+        
+
+        
+    }
+}
+3. Write a recursive function to calculate sum of first N even natural numbers
+#include <stdio.h>
+int recNaturalSumEven(int);
+int main() {
+    int n, result;
+   printf("Enter value of N\n");
+   scanf("%d",&n);
+   result = recNaturalSumEven(n);
+   printf("Sum is %d ",result);
+    return 0;
+}
+int  recNaturalSumEven(int n)
+{
+   if(n>0) {
+               return((2*n)+recNaturalSumEven(n-1));
+              // printf("%d",n%8);
+        
+
+        
+    }
+}
+4. Write a recursive function to calculate sum of squares of first n natural numbers
+#include <stdio.h>
+int recNaturalSumSquares(int);
+int main() {
+    int n, result;
+   printf("Enter value of N\n");
+   scanf("%d",&n);
+   result = recNaturalSumSquares(n);
+   printf("Sum is %d ",result);
+    return 0;
+}
+int  recNaturalSumSquares(int n)
+{
+   if(n>0) {
+               return((n*n)+recNaturalSumSquares(n-1));
+              // printf("%d",n%8);
+        
+
+        
+    }
+}
+5. Write a recursive function to calculate sum of digits of a given number
+#include <stdio.h>
+int recSumOfDigits(int);
+int main() {
+    int n, result;
+   printf("Enter value of N\n");
+   scanf("%d",&n);
+   result = recSumOfDigits(n);
+   printf("Sum is %d ",result);
+    return 0;
+}
+int  recSumOfDigits(int n)
+{
+   if(n>0) {
+               return((n%10)+recSumOfDigits(n/10));
+              // printf("%d",n%8);
+        
+
+        
+    }
+}
+6. Write a recursive function to calculate factorial of a given number
+#include <stdio.h>
+int recFactorial(int);
+int main() {
+    int n, result;
+   printf("Enter value of N\n");
+   scanf("%d",&n);
+   result = recFactorial(n);
+   printf("Sum is %d ",result);
+    return 0;
+}
+int  recFactorial(int n)
+{
+   if(n==0) return 1 ;
+   if(n>=1) {
+               return(n*recFactorial(n-1));
+              // printf("%d",n%8);
+        
+
+        
+    }
+}
+7. Write a recursive function to calculate HCF of two numbers
+#include <stdio.h>
+int recHCF(int,int);
+int main() {
+    int n1, n2,HCF;
+    printf("Enter two numbers \n");
+    scanf("%d%d",&n1,&n2);
+     printf("Numbers are: %d and %d \n ",n1,n2);
+    HCF = recHCF(n1,n2);
+    printf("HCF of %d and %d is %d ",n1,n2,HCF);
+
+    return 0;
+}
+int recHCF(int n1, int n2)
+{
+    static int i=1;
+    static int flag=0;
+    
+    
+    if(i>=n1){
+        if(!flag) return 1;
+         else   return i;
+        
+    }
+    i++;
+    if((n1%i==0) && (n2%i==0)){
+        flag=1;
+        recHCF(n1/i,n2/i);
+        }
+        else{
+            recHCF(n1,n2);
+            }
+}
+8. Write a recursive function to print first N terms of Fibonacci series
+#include<stdio.h>    
+void RecprintFibonacci(int n){    
+    static int n1=0,n2=1,n3;    
+    if(n>0){    
+         n3 = n1 + n2;    
+         n1 = n2;    
+         n2 = n3;    
+         printf("%d ",n3);    
+         RecprintFibonacci(n-1);    
+    }    
+}    
+int main(){    
+    int n;    
+    printf("Enter the number of elements: ");    
+    scanf("%d",&n);    
+    printf("Fibonacci Series of %d term is  ", n);    
+    printf("%d %d ",0,1);    
+    RecprintFibonacci(n-2);   
+  return 0;  
+}
+9. Write a program in C to count the digits of a given number using recursion.
+#include <stdio.h>
+int recCountDigits(int);
+int main() {
+    int n, pow, result;
+   printf("Enter the number\n");
+   scanf("%d",&n);
+   result = recCountDigits(n);
+   printf("Total digits in number %d are %d ",n,result);
+    return 0;
+}
+int  recCountDigits(int n)
+{
+   if(n==0) return 0 ;
+   if(n>0) {
+               return(1+recCountDigits(n/10));
+               
+              // printf("%d",n%8);
+        
+
+        
+    }
+}
+10. Write a program in C to calculate the power of any number using recursion.
+#include <stdio.h>
+int recPower(int,int);
+int main() {
+    int n, pow, result;
+   printf("Enter the number and its power\n");
+   scanf("%d%d",&n,&pow);
+   result = recPower(n,pow);
+   printf("Result is %d ",result);
+    return 0;
+}
+int  recPower(int n,int pow)
+{
+   if(pow==0) return 1 ;
+   if(pow>0) {
+               return(n*recPower(n,pow-1));
+              // printf("%d",n%8);
+        
+
+        
+    }
+}
