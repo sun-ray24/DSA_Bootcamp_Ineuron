@@ -1,0 +1,312 @@
+Assignment - 17 A Job Ready Bootcamp in C++, DSA and IOT MySirG
+String Basics in C Language
+1. Write a program to calculate the length of the string. (without using built-in method)
+#include <stdio.h>
+
+int main() {
+    char str[20];
+    int count,i;
+    i=0;
+    count=0;
+    printf("Enter a string\n");
+    gets(str);
+    while(str[i]!='\0')
+    {
+        count+=1;
+        i++;
+    }
+        printf("Length is the string is %d\n",i);
+
+    printf("Length is the string is %d\n",count);
+
+    return 0;
+}
+2. Write a program to count the occurrence of a given character in a given string.
+#include <stdio.h>
+
+int main() {
+    char str[20],c;
+    int count,i;
+    i=0;
+    count=0;
+    printf("Enter a string\n");
+    gets(str);
+    printf("Enter the character to search in string\n");
+    scanf("%c",&c);
+           
+    while(str[i])
+    {
+                   
+
+        if(str[i]==c){
+            count+=1;
+        }
+        i++;
+    }
+        printf("%c occured in the string  %d times\n",c,count);
+
+
+    return 0;
+}
+3. Write a program to count vowels in a given string.
+#include <stdio.h>
+
+int main() {
+    char str[20],c;
+    int count,i;
+    i=0;
+    count=0;
+    printf("Enter a string with vowels\n");
+    gets(str);
+     
+    while(str[i])
+    {
+                   
+
+        if(str[i]=='a'||str[i]=='e'||str[i]=='i'||str[i]=='o'||str[i]=='u'){
+            count+=1;
+        }
+        i++;
+    }
+        printf("Number of vowels in the string are %d\n",count);
+
+
+    return 0;
+}
+4. Write a program to convert a given string into uppercase
+#include <stdio.h>
+
+int main() {
+    char str[20],c;
+    int count,i;
+    i=0;
+    count=0;
+    printf("Enter a string \n");
+    gets(str);
+     
+    while(str[i])
+    {
+        if(str[i]<=122 && str[i]>=92)
+        {
+            str[i]=str[i]-32;
+        }
+                i++;
+    }
+        
+        printf("String in uppercase is\n");
+        puts(str);
+
+
+    return 0;
+}
+5. Write a program to convert a given string into lowercase
+#include <stdio.h>
+
+int main() {
+    char str[20],c;
+    int count,i;
+    i=0;
+    count=0;
+    printf("Enter a string with uppercase letters \n");
+    gets(str);
+     
+    while(str[i])
+    {
+        if(str[i]<=90 && str[i]>=65)
+        {
+            str[i]=str[i]+32;
+        }
+                i++;
+    }
+        
+        printf("String in lowercase is\n");
+        puts(str);
+
+
+    return 0;
+}
+6. Write a program to reverse a string.
+#include <stdio.h>
+void reverseString(char[]);
+int length(char []);
+int main() {
+    char str[20];
+    //int i;
+    printf("Enter a string\n");
+    fgets(str,20,stdin);
+    reverseString(str);
+    printf("\n The input string is\n");
+    puts(str);
+
+    return 0;
+}
+void reverseString(char str[])
+{
+    int i=0;
+    int count = length(str);
+    printf("Count is %d",count);
+    for(int i=count;i>=0;i--)
+    {
+        printf("%c",str[i]);
+    }
+}
+int length(char str[])
+{
+    int count;
+    int i=0;
+    while(str[i]){
+        count+=1;
+i++;
+    }
+    return count;
+}
+7. Write a program in C to count the total number of alphabets, digits and special characters in a string.
+#include <stdio.h>
+void count(char[]);
+int main() {
+    char str[20];
+    //int i;
+    printf("Enter a string\n");
+    fgets(str,20,stdin);
+     count(str);
+    
+    return 0;
+}
+void count(char str[])
+{
+    int i,countAlpha,countDigit,countSpl;
+    countAlpha =0;
+    countDigit = 0;
+    countSpl =0;
+    while(str[i])
+    { 
+        if((str[i]>=97&&str[i]<=122) ||(str[i]>=65&&str[i]<=90))
+        countAlpha++;
+        else if((str[i]>=48&&str[i]<=57))
+        countDigit++;
+        else
+        countSpl++;
+        i++;
+    }
+    printf("Alphabets are %d\n digits are %d\n,Special characters are %d",countAlpha,countDigit,countSpl);
+}
+
+8. Write a program in C to copy one string to another string.
+#include <stdio.h>
+void stringCopy(char[]);
+int main() {
+    char str[20];
+    //int i;
+    printf("Enter a string\n");
+    fgets(str,20,stdin);
+     stringCopy(str);
+    
+    return 0;
+}
+void stringCopy(char str1[])
+{
+    int i;
+    char str2[20];
+    while(str1[i]){
+        str2[i]=str1[i];
+        i++;
+    }
+    str2[i]='\0';
+    printf("Copied string is %s",str2);
+}
+
+9. Write a C program to sort a string array in ascending order.
+#include <stdio.h>
+void stringSort(char[]);
+int length(char[]);
+int main() {
+    char str[20];
+    printf("Enter a string\n");
+    fgets(str,20,stdin);
+     stringSort(str);
+    
+    return 0;
+}
+void stringSort(char str[])
+{
+    int i,j;
+    char temp;
+    int len;
+    len = length(str);
+    printf("\n Length of string is %d\n ",len);
+   for(i=0;str[i];i++){
+   for(j=0;j<len-1;j++)
+        {
+            if(str[j]>str[j+1])
+            {
+            temp = str[j];
+            str[j] = str[j+1];
+            str[j+1]=temp;
+            }
+        }
+    
+        
+    }
+    
+    printf("sorted string is %s",str);
+}
+int length(char str[]){
+int i=0;
+int count=0;
+while(str[i]){
+count++;
+i++;
+
+}
+return count;
+
+
+}
+10. Write a program in C to Find the Frequency of Characters.
+#include <stdio.h>
+void stringSort(char[]);
+int length(char[]);
+int main() {
+    char str[20];
+    printf("Enter a string\n");
+    fgets(str,20,stdin);
+     stringSort(str);
+    
+    return 0;
+}
+void stringSort(char str[])
+{
+    int i,j;
+    char temp;
+    int len;
+    int f=0;
+    len = length(str);
+    printf("\n Length of string is %d\n ",len);
+   for(i=0;i<len-1;i++){
+   f=0;
+   temp=str[i];
+   for(j=0;j<len;j++)
+        {
+            if(temp==str[j]){
+            f++;
+            }
+        }
+        printf("Frequency of %c is %d \n",temp,f);
+    
+        
+    }
+    
+    printf("sorted string is %s",str);
+}
+int length(char str[]){
+int i=0;
+int count=0;
+while(str[i]){
+count++;
+i++;
+
+}
+return count;
+
+
+}
