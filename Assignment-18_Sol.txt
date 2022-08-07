@@ -1,0 +1,351 @@
+Assignment - 18 A Job Ready Bootcamp in C++, DSA and IOT MySirG
+String and Functions in C Language
+1. Write a function to calculate length of the string
+#include <stdio.h>
+void strlength(char []);
+int main() {
+    char str[20];
+    
+    printf("Enter a string\n");
+    gets(str);
+    strlength(str);
+    
+    
+    return 0;
+}
+void strlength(char str[])
+{
+    int i;
+    i=0;
+    
+    while(str[i]!='\0')
+    {
+        
+        i++;
+    }
+        printf("Length is the string is %d\n",i);
+
+    }
+2. Write a function to reverse a string.
+#include <stdio.h>
+void reverseString(char[]);
+int length(char []);
+int main() {
+    char str[20];
+    //int i;
+    printf("Enter a string\n");
+    fgets(str,20,stdin);
+    reverseString(str);
+    printf("\n The input string is\n");
+    puts(str);
+
+    return 0;
+}
+void reverseString(char str[])
+{
+    int i=0;
+    int count = length(str);
+    printf("Count is %d",count);
+    for(int i=count;i>=0;i--)
+    {
+        printf("%c",str[i]);
+    }
+}
+int length(char str[])
+{
+    int count;
+    int i=0;
+    while(str[i]){
+        count+=1;
+i++;
+    }
+    return count;
+}
+
+3. Write a function to compare two strings.
+#include <stdio.h>
+void strCompare(char [],char[]);
+int main() {
+    char str1[20],str2[20];
+    
+    printf("Enter first string\n");
+    gets(str1);
+    printf("Enter second string\n");
+    gets(str2);
+    strCompare(str1,str2);
+    return 0;
+}
+void strCompare(char str1[],char str2[]){
+    int i;
+    int flag=0;
+    i=0;
+    while(str1[i] && str2[i])
+    {
+        if(str1[i]!=str2[i]) {flag=1; break;}
+        i++;
+    }
+    if(flag)printf("Strings do not match\n");
+    else printf("Strings are matching\n");
+}
+
+4. Write a function to transform string into uppercase
+#include <stdio.h>
+void toUpper(char []);
+int main() {
+    char str[20];
+    
+    printf("Enter a string\n");
+    gets(str);
+    toUpper(str);
+    return 0;
+}
+void toUpper(char str[]){
+
+    int count,i;
+    i=0;
+    count=0;
+    while(str[i])
+    {
+        if(str[i]<=122 && str[i]>=92)
+        {
+            str[i]=str[i]-32;
+        }
+                i++;
+    }
+        
+        printf("String in uppercase is\n");
+        puts(str);
+
+}
+
+5. Write a function to transform a string into lowercase
+#include <stdio.h>
+void toLower(char []);
+int main() {
+    char str[20];
+    
+    printf("Enter a string\n");
+    gets(str);
+    toLower(str);
+    return 0;
+}
+void toLower(char str[]){
+
+    int count,i;
+    i=0;
+    count=0;
+    while(str[i])
+    {
+        if(str[i]<=90 && str[i]>=65)
+        {
+            str[i]=str[i]+32;
+        }
+                i++;
+    }
+        
+        printf("String in lowercase is\n");
+        puts(str);
+
+}
+
+6. Write a function to check whether a given string is an alphanumeric string or not. 
+(Alphanumeric string must contain at least one alphabet and one digit)
+#include <stdio.h>
+void isAlphaNumeric(char []);
+int main() {
+    char str1[20],str2[20];
+    
+    printf("Enter first string\n");
+    gets(str1);
+    isAlphaNumeric(str1);
+    return 0;
+}
+void isAlphaNumeric(char str[]){
+    int i;
+    int flagAlpha=0;
+    int flagNumeric=0;
+    i=0;
+    while(str[i])
+    {
+        if ( (str[i]>=97&&str[i]<=122) ||(str[i]>=65&&str[i]<=90))flagAlpha++;
+        if((str[i]>=48&&str[i]<=57))flagNumeric++;
+        i++;
+    }
+    if(flagAlpha &&flagNumeric)printf("String is Alphanumeric\n");
+    else printf("Strings is not Alphanumeric\n");
+}
+
+7. Write a function to check whether a given string is palindrome or not.
+#include <stdio.h>
+void reverseString(char[]);
+int length(char []);
+int main() {
+    char str[20];
+    //int i;
+    printf("Enter a string\n");
+    fgets(str,20,stdin);
+    reverseString(str);
+   // printf("\n The input string is\n");
+//    puts(str);
+
+    return 0;
+}
+void reverseString(char str[])
+{
+    int i=0,j=0,flag=0;;
+    char strRev[20];
+    int len = length(str);
+    printf("Length of string is %d\n",len);
+    for(int i=len-1;i>=0;i--)
+    {
+        strRev[j]=str[i];
+        j++;
+    }
+    strRev[j]='\0';
+    printf("Reverse string is %s\n",strRev);
+    i=0;
+    while(str[i]&&strRev[i]){
+        if(str[i]!=strRev[i]){ flag=1;}
+        i++;
+        
+    }
+    if(!flag)printf("string is a palindrome string\n");
+}
+int length(char str[])
+{
+    int i=-0;
+    while(str[i]){
+        i++;
+    }
+    return i-1;
+}
+
+8. Write a function to count words in a given string
+#include <stdio.h>
+void countWords(char[]);
+int length(char []);
+int main() {
+    char str[50];
+    //int i;
+    printf("Enter a string\n");
+    fgets(str,50,stdin);
+    countWords(str);
+   // printf("\n The input string is\n");
+//    puts(str);
+
+    return 0;
+}
+void countWords(char str[])
+{
+    int i=0,j=0,flag=0,count=1;;
+     int len = length(str);
+    
+    while(str[i]){
+        if(str[i]==32)count++;
+        i++;
+        
+    }
+    if(i)printf("Number of words are %d\n",count);
+}
+
+
+9. Write a function to reverse a string word wise. (For example if the given string is 
+“Mysirg Education Services” then the resulting string should be “Services Education 
+Mysirg” )
+#include <stdio.h>
+void reverseWords(char[]);
+int length(char []);
+int main() {
+    char str[50];
+    //int i;
+    printf("Enter a string\n");
+    fgets(str,50,stdin);
+    reverseWords(str);
+      return 0;
+}
+void reverseWords(char str[])
+{
+    int i=0,j=0,flag=0,count=1,tempLen;
+    int len=length(str);
+    char strRev[50];
+    tempLen=len;
+    j=0;
+    int countRev=0;
+    
+    for(i=len-1;i>=0;i--){
+       if(str[i]!=32 && i>=0){
+            j++;
+            }
+            if(str[i]==32 || i==0){
+               do{
+            strRev[countRev] = str[tempLen-j];
+        j--;
+        countRev++;
+        }while(j>0);
+        
+        if(!(countRev==len-1)){
+            strRev[countRev] =32;
+            countRev++;
+        }
+        tempLen=len-countRev;
+        }        
+    
+          
+        
+}
+  printf("\n Reverse string is %s",strRev);
+    
+}
+int length(char str[])
+{
+    int i=-0;
+    while(str[i]){
+        i++;
+    }
+    return i-1;
+}
+
+
+
+10. Write a function to find the repeated character in a given string.
+#include <stdio.h>
+void repeatedChar(char[]);
+int length(char []);
+int main() {
+    char str[50];
+    //int i;
+    printf("Enter a string\n");
+    fgets(str,50,stdin);
+    repeatedChar(str);
+   // printf("\n The input string is\n");
+//    puts(str);
+
+    return 0;
+}
+void repeatedChar(char str[])
+{
+    int i=0,j=0,flag=0,count=1;
+    int len=length(str);
+   for(i=0;str[i];i++){
+       for(j=i+1;j<=len && str[i];j++){
+       if(str[i]==str[j])
+       {
+           printf("Repeated char is %c ",str[i]);
+           flag=1;
+           break;
+       }
+       
+   }
+   if(flag)break;
+    
+}
+}
+int length(char str[])
+{
+    int i=-0;
+    while(str[i]){
+        i++;
+    }
+    return i-1;
+}
+
